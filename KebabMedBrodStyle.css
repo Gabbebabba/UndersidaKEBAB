@@ -1,0 +1,42 @@
+h1 {
+    color: blue;
+    font-size: 28pt;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #aaa;
+  }
+
+header {
+    background-color: #ffffff;
+    color: #df2929;
+    text-align: center;
+
+  }
+  
+
+nav {
+    background-color: #ffffff;
+  }
+
+main {
+   background-color: #ffffff;
+  }
+
+aside {
+    background-color: #ffffff;
+  }
+
+  main section, aside section {
+  background-color: #fff;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+  
