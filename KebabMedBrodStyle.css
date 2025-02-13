@@ -1,15 +1,11 @@
-h1 {
-    color: blue;
-    font-size: 28pt;
-}
-
-
 body {
     font-family: Arial, sans-serif;
     color: #aaa;
   }
 
 header {
+    color: blue;
+    font-size: 28pt;
     color: #df2929;
     text-align: center;
 
