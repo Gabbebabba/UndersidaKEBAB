@@ -1,36 +1,163 @@
-body {
-    font-family: Arial, sans-serif;
-    color: #aaa;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-header {
-    color: blue;
-    font-size: 28pt;
-    color: #df2929;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
 
-  }
-  
-
-nav {
-    background-color: #ffffff;
-  }
+::-webkit-scrollbar {
+    display: none;
+}
 
 main {
-   background-color: #ffffff;
-  }
+    display: grid;
+    grid-template-areas: 
+        "nav topbar aside"
+        "nav article aside"
+        "nav footer aside";
+    height: 100vh;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 2fr 20fr 2fr;
+}
+
+header {
+    grid-area: topbar;
+    background-color: rgb(27, 2, 59, 0);
+    padding: 20px;
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+article {
+    grid-area: article;
+    background-color: rgb(27, 2, 59, 0);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+#container2, #container3, #container4, #container5, #container6 {
+    max-width: 1000px;
+    margin-bottom: 2em;
+}
 
 aside {
-    background-color: #ffffff;
-  }
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+}
 
-  main section, aside section {
-  background-color: #fff;
+aside h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+aside button {
+    transform: scale(1.5);
+
+}
+
+aside button:hover {
+    transform: scale(1.95);
+}
+
+button {
+    background-color: rgb(0, 0, 139);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 100px;
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .button {
+    transform: scale(1.5);
+}
+
+nav .button:hover {
+    transform: scale(1.95);
 }
 
 footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-  
+
+footer div {
+    text-align: center;
+}
+
+.button_div, .aside_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.box-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    perspective: 400px;
+    margin: 1em auto;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate 4s linear infinite;
+}
+
+.face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+}
+
+.front { transform: rotateY(0deg) translateZ(50px); }
+.back  { transform: rotateY(180deg) translateZ(50px); }
+.left  { transform: rotateY(-90deg) translateZ(50px); }
+.right { transform: rotateY(90deg) translateZ(50px); }
+.bottom { transform: rotateX(90deg) translateZ(50px); }
+
+@keyframes rotate {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+#bgVideo {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+body, header, nav, aside, footer, article {
+  background-color: rgb(27, 2, 59, 0.8);
+}
